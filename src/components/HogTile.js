@@ -5,7 +5,7 @@ function HogTile(props) {
     const [isClicked, setisClicked] = useState(false)
       
     return (
-        <div className="map" onClick={() => { setisClicked(!isClicked)}}>
+        <div className="ui eight wide column" onClick={() => { setisClicked(!isClicked)}}>
             <img src={props.image} alt={props.name}/>
             <p>{props.name}</p>
             { isClicked ? <HogInfo weight={props.weight} greased={props.greased} specialty={props.specialty} highestmedalachieved={props.highestmedalachieved}/> : "" }

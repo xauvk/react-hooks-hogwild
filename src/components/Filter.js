@@ -1,17 +1,14 @@
 import React from 'react';
 
-const Filter = (props) => {
-    function onClicked (e) {
-        props.handlerChange(e.target.value)
-    }
-  
+const Filter = ({handlerChange}) => {
+   
+
     return (
-       <select onChange={onClicked}>
-            <option value='All'>All</option>
-            <option value='Greased'>Greased</option>
-            <option value='Name'>Name</option>
-            <option value='Weight'>Weight</option>
-       </select>
+       <div>
+            <div>Greased Pigs
+                <input type='checkbox' name='greased' value='greased' onClick={handlerChange} />
+            </div>
+       </div>
     )
 };
 
