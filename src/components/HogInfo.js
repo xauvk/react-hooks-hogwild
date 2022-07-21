@@ -1,11 +1,12 @@
-function HogInfo (props) {
+function RenderPigInfo (props) {
+   
     return (
-        <div>
+        <p>
             <p>{props.weight} lbs</p>
             <p>{props.greased ? "greased" : "not greased"}</p>
             <p>Specialty: {props.specialty}</p>
-        </div>
+            <p>{props.highestmedalachieved}</p>
+        </p>    
     )
 }
-
-export default HogInfo
+export default RenderPigInfo;

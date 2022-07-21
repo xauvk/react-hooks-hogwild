@@ -1,34 +1,14 @@
 import HogInfo from "./HogInfo"
-import {useState} from "react"
+import { useState } from "react"
 
 function HogTile(props) {
-    
-    const [isRendering, setIsRendering] = useState(false)
-
-
-    function renderPigInfo (e) {
-        console.log('saf')
-        
-        // if (isRendering) {
-        //     setIsRendering(false)
-        // } else {
-        //     setIsRendering(true)
-        // }
-        
-        return (
-            <div>
-                <p>{props.weight} lbs</p>
-                <p>{props.greased ? "greased" : "not greased"}</p>
-                <p>Specialty: {props.specialty}</p>
-            </div>
-        )
-    }
-    
+    const [isClicked, setisClicked] = useState(false)
+      
     return (
-        <div className="map" onClick={renderPigInfo}>
+        <div className="map" onClick={() => { setisClicked(!isClicked)}}>
             <img src={props.image} alt={props.name}/>
             <p>{props.name}</p>
-            <p>{renderPigInfo}</p>
+            { isClicked ? <HogInfo weight={props.weight} greased={props.greased} specialty={props.specialty} highestmedalachieved={props.highestmedalachieved}/> : "" }
         </div>
     )
 }
